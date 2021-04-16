@@ -1,0 +1,20 @@
+{
+  "name": "stephanevergnaud_3_20210416",
+  "version": "1.0.0",
+  "description": "site ohmyfood",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass":"sass --watch ./sass/main.scss:pages/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SVergnaudExpleo/StephaneVergnaud_3_20210416.git"
+  },
+  "author": "vergnaud stephane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SVergnaudExpleo/StephaneVergnaud_3_20210416/issues"
+  },
+  "homepage": "https://github.com/SVergnaudExpleo/StephaneVergnaud_3_20210416#readme"
+}
