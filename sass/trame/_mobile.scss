@@ -2,19 +2,44 @@
   and (max-width: 720px) {
   
     .index__header{
-        margin: 0 0 50px 0;
+        margin: 20px 0 12px 0;
+        @include centrage_txt;
     }
 
     .index__rech{
         margin: 0 0 50px 0;
         background-color: $background__clair;
-@include centrage_txt;
+        padding: 0 0 55px 0;
         &--bar{
+            width: 100%;
+            height: 50px;
+            margin: 0 0 45px 0;
             background-color: $background__fonce;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            .fas__mapmarker{
+                font-size: 16px;
+                height: 100%;
+                @include centrage_txt;
+            }
+            .rech--form{
+                margin: 0 0 0 18px;
+                width: 100px;
+                @include centrage_txt;
+            }
+
+        }
+        &--titre{
+            margin: 0 0 20px 0;
+            @include centrage_txt;
         }
         &--txt{
+            margin: 0 0 35px 0;
+            @include centrage_txt;
         }
         &--btn{
+            @include centrage_txt;
         }
     }
 
