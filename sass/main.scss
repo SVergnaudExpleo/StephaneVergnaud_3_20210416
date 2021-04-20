@@ -1,3 +1,10 @@
-html{
-    background-color: rgba(133, 146, 187, 0.267);
-}
+@import "./outil/variables";
+@import "./outil/mixin";
+
+@import "./theme/themebase";
+@import "./composants/bouton";
+@import "./composants/icone";
+
+@import "./trame/mobile";
+@import "./trame/tablette";
+@import "./trame/ordinateur";

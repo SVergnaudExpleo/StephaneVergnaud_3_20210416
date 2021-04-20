@@ -1,0 +1,105 @@
+@media only screen 
+  and (max-width: 720px) {
+  
+    .index__header{
+        margin: 0 0 50px 0;
+    }
+
+    .index__rech{
+        margin: 0 0 50px 0;
+        background-color: $background__clair;
+@include centrage_txt;
+        &--bar{
+            background-color: $background__fonce;
+        }
+        &--txt{
+        }
+        &--btn{
+        }
+    }
+
+    .titre__fonc{
+        margin: 0 20px 35px 20px;
+    }
+    .index__fonc{
+        margin: 0 20px 50px 20px;
+        display: grid;
+        grid-gap: 20px;
+    }
+    .box__fonc{
+        display: grid;
+        align-items: center;
+        grid-template-columns: 50px auto;
+        grid-template-rows: 50px;
+        grid-template-areas:
+        "fonc fonc";
+        &--num{
+            grid-area: fonc;
+            z-index: 2;
+            background-color: $color__pri;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            @include centrage_txt;
+        } 
+        &--carte{
+            grid-area: fonc;
+            z-index: 1;
+            border-radius: 10px;
+            background-color: $background__clair;
+            @include ombre_carte;
+            margin: 0 0 0 20px;
+            padding: 0 0 0 0;
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    .index__nav{
+        margin: 0 20px 50px 20px;
+    }
+    .liste__resto{
+        width: 100%;
+        display: grid;
+        grid-template-rows: repeat (4, 1fr);
+        grid-gap: 20px;
+    }
+
+    .carte__resto{
+        display: grid;
+        grid-template-columns: auto 50px;
+        grid-template-rows: auto ;
+        grid-template-areas: 
+        "img img "
+        "txt fas";
+        border-radius: 20px;
+        @include ombre_carte;
+        &--img{
+        grid-area: img;
+        height: 174px;
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        object-fit: cover;
+        z-index: 1;
+        }
+        &--flag{
+            grid-area: img;
+            background-color: $color__tri;
+            width: 100px;
+            height: 50px;
+            margin: 10px 10px 0 0;
+            justify-self: flex-end;
+            @include centrage_txt;
+            z-index: 2;
+        }
+        &--txt{
+            grid-area: txt;
+        }
+        &--coeur{
+            grid-area: fas;
+        }
+    }
+
+  }
+

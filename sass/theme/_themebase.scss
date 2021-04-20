@@ -1,0 +1,27 @@
+html{
+    font-family: "roboto", sans-serif;
+}
+body{
+    @include margin_null;
+    @include padding_null;
+}
+h1 {
+    font-family: "shrikhand", cursive;
+    @include margin_null;
+}
+h2{
+    @include margin_null;
+}
+h3{
+    @include margin_null;
+}
+p{
+    @include margin_null;
+}
+a {
+    text-decoration: unset;
+    color: unset;
+}
+li{
+    list-style-type: none;
+}
