@@ -12,114 +12,121 @@
     </head>
 
     <body>
-        <header class="index__header">
-            <h1>ohmyfood</h1>
+        <header>
+            <h1 class="titre-header" >ohmyfood</h1>
         </header>
 
-        <section class="index__rech">
-            <div class="index__rech--bar">
+        <section id="rech">
+            <div class="rech__bar">
                 <div class="fas__mapmarker">
                     <i class="fas fa-map-marker-alt"></i>
                 </div>
-                <form class="rech--form">
+                <form class="form-rech">
                     <input type="text" value="Paris, Belleville">
                 </form>
             </div>
-            <h2 class="index__rech--titre">Réserver le menu qui vous convient</h2>
-            <p class="index__rech--txt">découvrez des restaurants d'exeption sélectionnés par nos soins.</p>
-            <div class="index__rech--btn">
-                <button class="btn__action" type="button">Explorer nos restaurants</button>
+            <h2 class="rech__titre">Réserver le menu qui vous convient</h2>
+            <p class="rech__txt">découvrez des restaurants d'exeption sélectionnés par nos soins.</p>
+            <div class="rech__btn">
+                <button class="btn-action" type="button">Explorer nos restaurants</button>
             </div>
         </section>
 
-        <h2 class="titre__fonc">Fonctionnement</h2>
-        <div class="index__fonc">
-            <div class="box__fonc">
-                <div class="box__fonc--num">1</div>
-                <div class="box__fonc--carte">
-                    <div class="fas__fonc"><i class="fas fa-mobile-alt"></i></div>
-                    <p><strong>Choisissez un restaurant</strong></p>
+        <h2 id="titre-fonc">Fonctionnement</h2>
+        <div id="fonc">
+            <div class="fonc__box">
+                <div class="num">1</div>
+                <div class="carte-fonc">
+                    <div class="carte-fonc__logo"><i class="fas fa-mobile-alt"></i></div>
+                    <p class="carte-fonc__txt"><strong>Choisissez un restaurant</strong></p>
                 </div>
             </div>
-            <div class="box__fonc">
-                <div class="box__fonc--num">2</div>
-                <div class="box__fonc--carte">
-                    <div class="fas__fonc"><i class="fas fa-list"></i></div>
-                    <p><strong>Composez votre menu</strong></p>
+            <div class="fonc__box">
+                <div class="num">2</div>
+                <div class="carte-fonc">
+                    <div class="carte-fonc__logo"><i class="fas fa-list"></i></div>
+                    <p class="carte-fonc__txt"><strong>Composez votre menu</strong></p>
                 </div>
             </div>
-            <div class="box__fonc">
-                <div class="box__fonc--num">3</div>
-                <div class="box__fonc--carte">
-                    <div class="fas__fonc"><i class="fas fa-store"></i></div>
-                    <p><strong>Dégustez au restaurant</strong></p>
+            <div class="fonc__box">
+                <div class="num">3</div>
+                <div class="carte-fonc">
+                    <div class="carte-fonc__logo"><i class="fas fa-store"></i></div>
+                    <p class="carte-fonc__txt"><strong>Dégustez au restaurant</strong></p>
                 </div>
             </div>
         </div>
 
-        <section class="index__nav">
-            <h2 class="titre__resto">Restaurants</h2>
-            <nav class="liste__resto">
+        <section id="nav">
+            <h2 id="nav__titre">Restaurants</h2>
+            <nav id="nav__liste">
                 <a href="">
-                    <div class="carte__resto">
-                        <img class="carte__resto--img" src="./images/lapalettedugout.jpg" alt="La palette du goût">
-                        <div class="carte__resto--flag">Nouveau</div>
-                        <div class="carte__resto--txt">
+                    <div class="carte-resto">
+                        <img class="carte-resto__img" src="./images/lapalettedugout.jpg" alt="La palette du goût">
+                        <div class="carte-resto__flag">Nouveau</div>
+                        <div class="carte-resto__txt">
                             <h3>La palette du goût</h3>
                             <p>Ménhilmontant</p>
                         </div>
-                        <div class="carte__resto--coeur">
+                        <div class="carte-resto__logo">
                             <i class="far fa-heart"></i> 
                         </div>
                     </div>
                 </a>
                 <a href="">
-                    <div class="carte__resto">
-                        <img class="carte__resto--img" src="./images/lanoteenchante.jpg" alt="La note enchantée">
-                        <div class="carte__resto--flag">Nouveau</div>
-                        <div class="carte__resto--txt">
+                    <div class="carte-resto">
+                        <img class="carte-resto__img" src="./images/lanoteenchante.jpg" alt="La note enchantée">
+                        <div class="carte-resto__flag">Nouveau</div>
+                        <div class="carte-resto__txt">
                             <h3>La note enchantée</h3>
                             <p>Charonne</p>
                         </div>
-                        <div class="carte__resto--coeur">
+                        <div class="carte-resto__logo">
                             <i class="far fa-heart"></i> 
                         </div>
                     </div>
                 </a>
                 <a href="">
-                    <div class="carte__resto">
-                        <img class="carte__resto--img" src="./images/alafrancaise.jpg" alt="À la française">
-                        <div class="carte__resto--txt">
+                    <div class="carte-resto">
+                        <img class="carte-resto__img" src="./images/alafrancaise.jpg" alt="À la française">
+                        <div class="carte-resto__txt">
                             <h3>À la française</h3>
                             <p>Cité Rouge</p>
                         </div>
-                        <div class="carte__resto--coeur">
+                        <div class="carte-resto__logo">
                             <i class="far fa-heart"></i> 
                         </div>
                     </div>
                 </a>
                 <a href="">
-                    <div class="carte__resto">
-                        <img class="carte__resto--img" src="./images/ledelicedessens.jpg" alt="Le délice des sens">
-                        <div class="carte__resto--txt">
+                    <div class="carte-resto">
+                        <img class="carte-resto__img" src="./images/ledelicedessens.jpg" alt="Le délice des sens">
+                        <div class="carte-resto__txt">
                             <h3>Le délice des sens</h3>
                             <p>Folie-Méricourt</p>
                         </div>
-                        <div class="carte__resto--coeur">
+                        <div class="carte-resto__coeur">
                             <i class="far fa-heart"></i> 
                         </div>
                     </div>
                 </a>
             </nav>
-
-
         </section>
-        
-
-
-
-
-
+        <footer>
+            <h3 class="titre-footer">ohmyfood</h3>
+            <div class="txt-footer">
+                <div class="txt-footer__couvert">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <p class="txt-footer__resto">Proposer un restaurant</p>
+                <div class="txt-footer__help">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <p class="txt-footer__part">Devenir partenaire</p>
+                <p class="txt-footer__leg">Mentions légales</p>
+                <a class="txt-footer__cont" href="mailto:ohmyfood@mail.com">Contact</a>
+            </div>
+        </footer>
 
     </body>
 </html>

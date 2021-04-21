@@ -1,15 +1,15 @@
-@mixin margin_null {
+@mixin margin-null {
     margin: 0;
 }
-@mixin padding_null {
+@mixin padding-null {
     padding: 0;
 }
-@mixin centrage_txt {
+@mixin centrage-txt {
     display: grid;
     align-items: center;
     justify-items: center;
     text-align: center;
 }
-@mixin ombre_carte {
+@mixin ombre-carte {
     box-shadow: 0 1px 15px rgba(95.5,95.5,95.5,0.3);
 }

@@ -41,24 +41,19 @@ input {
   height: 100%;
 }
 
-.btn__action {
+.btn-action {
   background-color: #FF79DA;
   color: white;
   height: 50px;
   border-radius: 25px;
 }
 
-.fas__fonc {
-  height: 50px;
-  width: 50px;
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  text-align: center;
+.fa-heart {
+  font-size: 20px;
 }
 
 @media only screen and (max-width: 720px) {
-  .index__header {
+  header {
     margin: 20px 0 12px 0;
     display: grid;
     align-items: center;
@@ -66,12 +61,12 @@ input {
     text-align: center;
   }
 
-  .index__rech {
+  #rech {
     margin: 0 0 50px 0;
     background-color: #f6f6f6;
     padding: 0 0 55px 0;
   }
-  .index__rech--bar {
+  #rech .rech__bar {
     width: 100%;
     height: 50px;
     margin: 0 0 45px 0;
@@ -80,7 +75,7 @@ input {
     flex-direction: row;
     justify-content: center;
   }
-  .index__rech--bar .fas__mapmarker {
+  #rech .rech__bar .fas__mapmarker {
     font-size: 16px;
     height: 100%;
     display: grid;
@@ -88,7 +83,7 @@ input {
     justify-items: center;
     text-align: center;
   }
-  .index__rech--bar .rech--form {
+  #rech .rech__bar .form-rech {
     margin: 0 0 0 18px;
     width: 100px;
     display: grid;
@@ -96,45 +91,44 @@ input {
     justify-items: center;
     text-align: center;
   }
-  .index__rech--titre {
+  #rech .rech__titre {
     margin: 0 0 20px 0;
     display: grid;
     align-items: center;
     justify-items: center;
     text-align: center;
   }
-  .index__rech--txt {
+  #rech .rech__txt {
     margin: 0 0 35px 0;
     display: grid;
     align-items: center;
     justify-items: center;
     text-align: center;
   }
-  .index__rech--btn {
+  #rech .rech__btn {
     display: grid;
     align-items: center;
     justify-items: center;
     text-align: center;
   }
 
-  .titre__fonc {
+  #titre-fonc {
     margin: 0 20px 35px 20px;
   }
 
-  .index__fonc {
+  #fonc {
     margin: 0 20px 50px 20px;
     display: grid;
     grid-gap: 20px;
   }
-
-  .box__fonc {
+  #fonc .fonc__box {
     display: grid;
     align-items: center;
     grid-template-columns: 50px auto;
     grid-template-rows: 50px;
     grid-template-areas: "fonc fonc";
   }
-  .box__fonc--num {
+  #fonc .fonc__box .num {
     grid-area: fonc;
     z-index: 2;
     background-color: #9356DC;
@@ -146,7 +140,7 @@ input {
     justify-items: center;
     text-align: center;
   }
-  .box__fonc--carte {
+  #fonc .fonc__box .carte-fonc {
     grid-area: fonc;
     z-index: 1;
     border-radius: 10px;
@@ -158,27 +152,36 @@ input {
     display: flex;
     flex-direction: row;
   }
-
-  .index__nav {
-    margin: 0 20px 50px 20px;
+  #fonc .fonc__box .carte-fonc__logo {
+    height: 50px;
+    width: 50px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
   }
 
-  .liste__resto {
+  #nav {
+    margin: 0 20px 65px 20px;
+  }
+  #nav__titre {
+    margin: 0 0 30px 0;
+  }
+  #nav__liste {
     width: 100%;
     display: grid;
     grid-template-rows: repeat 4, 1fr;
     grid-gap: 20px;
   }
-
-  .carte__resto {
+  #nav__liste .carte-resto {
     display: grid;
-    grid-template-columns: auto 50px;
+    grid-template-columns: auto auto;
     grid-template-rows: auto;
-    grid-template-areas: "img img " "txt fas";
+    grid-template-areas: "img img " "txt logo";
     border-radius: 20px;
     box-shadow: 0 1px 15px rgba(96, 96, 96, 0.3);
   }
-  .carte__resto--img {
+  #nav__liste .carte-resto__img {
     grid-area: img;
     height: 174px;
     width: 100%;
@@ -186,12 +189,12 @@ input {
     object-fit: cover;
     z-index: 1;
   }
-  .carte__resto--flag {
+  #nav__liste .carte-resto__flag {
     grid-area: img;
     background-color: #99E2D0;
-    width: 100px;
-    height: 50px;
-    margin: 10px 10px 0 0;
+    width: 80px;
+    height: 30px;
+    margin: 13px 11px 0 0;
     justify-self: flex-end;
     display: grid;
     align-items: center;
@@ -199,11 +202,50 @@ input {
     text-align: center;
     z-index: 2;
   }
-  .carte__resto--txt {
+  #nav__liste .carte-resto__txt {
     grid-area: txt;
+    padding: 20px 0 20px 15px;
   }
-  .carte__resto--coeur {
-    grid-area: fas;
+  #nav__liste .carte-resto__logo {
+    grid-area: logo;
+    padding: 20px 25px 20px 0;
+    justify-self: flex-end;
+  }
+
+  footer {
+    background-color: #353535;
+    color: white;
+    padding: 25px 0 38px 25px;
+  }
+  footer .titre-footer {
+    margin: 0 0 25px 0;
+    font-family: "shrikhand", cursive;
+  }
+  footer .txt-footer {
+    display: grid;
+    grid-template-columns: 30px auto;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: "logo1 txt1" "logo2 txt2" "txt3 txt3" "txt4 txt4";
+    grid-row-gap: 15px;
+  }
+  footer .txt-footer__couvert {
+    grid-area: logo1;
+  }
+  footer .txt-footer__resto {
+    grid-area: txt1;
+  }
+  footer .txt-footer__help {
+    grid-area: logo2;
+  }
+  footer .txt-footer__part {
+    grid-area: txt2;
+  }
+  footer .txt-footer__leg {
+    grid-area: txt3;
+  }
+  footer .txt-footer__cont {
+    grid-area: txt4;
+    width: 80px;
   }
 }
 
