@@ -17,3 +17,32 @@
     }
 }
 
+.btn-coeur{
+    position: relative;
+    z-index: 10;
+    @include padding_null;
+    height: 20px;
+    background: unset;
+    border: unset;
+    .far.fa-heart{
+        font-size: 20px;
+    }
+    .fas.fa-heart{
+        display: none;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+    &:active{
+        .far.fa-heart{
+            display: none;
+        }
+        .fas.fa-heart{
+            display: unset;
+            font-size: 20px;
+            color: transparent;
+            background: linear-gradient($color-pri, $color-duo);
+            background-clip: text;
+        }
+    }
+}
