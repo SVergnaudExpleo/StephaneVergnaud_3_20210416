@@ -11,5 +11,49 @@
     text-align: center;
 }
 @mixin ombre-carte {
-    box-shadow: 0 1px 15px rgba(95.5,95.5,95.5,0.3);
+    box-shadow: 0 1px 15px $color-ombre__carte;
 }
+
+@mixin ombre-btn {
+    box-shadow: 0px 2px 5px $color-ombre__btn;
+}
+@function ombre-btn--darken($couleur) {
+    $couleur-modif: darken($couleur, 5%);
+    @return $couleur-modif;
+}
+@mixin ombre-btn-dark($couleur: ombre-btn--darken($color-ombre__btn)) {
+    box-shadow: 0px 0px 0px 2px $couleur;
+}
+
+@function color-gradient--light($couleur) {
+    $couleur-modif: lighten($couleur, 5%);
+    @return $couleur-modif;
+}
+@mixin gradient__btn--light($couleur1: color-gradient--light($color-pri), $couleur2: color-gradient--light($color-duo)) {
+    background-image: linear-gradient(to bottom right, $couleur2, $couleur1);    
+}
+
+
+
+@function color-pri__background--lighten($color-pri) {
+    $hue: hue($color-pri);
+    $sat: 100%;
+    $lum: 96%;
+    $color-pri--light: hsl($hue, $sat, $lum);
+    @return $color-pri--light;
+}
+@mixin color-pri__background--light ($colour: color-pri__background--lighten($color-pri)){
+    background-color: $colour;
+}
+
+@function color-tri__font--darken($color-tri) {
+    $hue: hue($color-tri);
+    $sat: 100%;
+    $lum: 26%;
+    $color-tri--dark: hsl($hue, $sat, $lum);
+    @return $color-tri--dark;
+}
+@mixin color-tri__font--dark ($colour: color-tri__font--darken($color-tri)){
+    color: $colour;
+}
+

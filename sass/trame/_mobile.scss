@@ -30,11 +30,11 @@
             }
         }
         .rech__titre{
-            margin: 0 0 20px 0;
+            margin: 0 80px 20px 60px;
             @include centrage-txt;
         }
         .rech__txt{
-            margin: 0 0 35px 0;
+            margin: 0 30px 35px 40px;
             @include centrage-txt;
         }
         .rech__btn{
@@ -53,33 +53,39 @@
             display: grid;
             align-items: center;
             grid-template-columns: 50px auto;
-            grid-template-rows: 50px;
+            grid-template-rows: auto;
             grid-template-areas:
             "fonc fonc";
+            grid-gap: 25px;
             .num{
                 grid-area: fonc;
                 z-index: 2;
                 background-color: $color-pri;
-                width: 30px;
-                height: 30px;
+                width: 25px;
+                height: 25px;
                 border-radius: 50%;
                 @include centrage-txt;
             } 
             .carte-fonc{
                 grid-area: fonc;
                 z-index: 1;
-                border-radius: 10px;
+                border-radius: 20px;
                 background-color: $background-clair;
                 @include ombre-carte;
-                margin: 0 0 0 20px;
-                padding: 0 0 0 0;
+                margin: 0 0 0 15px;
                 align-items: center;
                 display: flex;
                 flex-direction: row;
-                &__logo{
-                    height: 50px;
-                    width: 50px;
+                &__txt{
+                    height: 75px;
                     @include centrage-txt;
+                }
+                &__logo{
+                    width: 38px;
+                    padding: 0 0 0 30px;
+                }
+                &__background--clair {
+                @include color-pri__background--light;
                 }
             }
         }
@@ -115,9 +121,11 @@
                 &__flag{
                     grid-area: img;
                     background-color: $color-tri;
+                    @include color-tri__font--dark;
                     width: 80px;
                     height: 30px;
                     margin: 13px 11px 0 0;
+                    border-radius: 2px;
                     justify-self: flex-end;
                     @include centrage-txt;
                     z-index: 2;
@@ -125,7 +133,6 @@
                 &__txt{
                     grid-area: txt;
                     padding: 20px 0 20px 15px;
-
                 }
                 &__logo{
                     grid-area: logo;

@@ -42,14 +42,42 @@ input {
 }
 
 .btn-action {
-  background-color: #FF79DA;
   color: white;
-  height: 50px;
+  font-weight: bold;
   border-radius: 25px;
+  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  border: unset;
+  box-shadow: 0px 2px 5px rgba(77, 77, 77, 0.79);
+}
+.btn-action:hover {
+  background-image: linear-gradient(to bottom right, #ff93e1, #a16be0);
+  box-shadow: 0px 0px 0px 2px rgba(64, 64, 64, 0.79);
+  text-shadow: 0 1px 1px black;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.btn-action__index--rech {
+  padding: 18px 20px 18px 20px;
 }
 
 .fa-heart {
   font-size: 20px;
+}
+
+.fa-mobile-alt {
+  color: #7e7e7e;
+  font-size: 20px;
+}
+
+.fa-list {
+  color: #7e7e7e;
+  font-size: 16px;
+}
+
+.fa-store {
+  color: #9356DC;
+  font-size: 18px;
+  transform: scale(0.833, 1);
 }
 
 @media only screen and (max-width: 720px) {
@@ -92,14 +120,14 @@ input {
     text-align: center;
   }
   #rech .rech__titre {
-    margin: 0 0 20px 0;
+    margin: 0 80px 20px 60px;
     display: grid;
     align-items: center;
     justify-items: center;
     text-align: center;
   }
   #rech .rech__txt {
-    margin: 0 0 35px 0;
+    margin: 0 30px 35px 40px;
     display: grid;
     align-items: center;
     justify-items: center;
@@ -125,15 +153,16 @@ input {
     display: grid;
     align-items: center;
     grid-template-columns: 50px auto;
-    grid-template-rows: 50px;
+    grid-template-rows: auto;
     grid-template-areas: "fonc fonc";
+    grid-gap: 25px;
   }
   #fonc .fonc__box .num {
     grid-area: fonc;
     z-index: 2;
     background-color: #9356DC;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     display: grid;
     align-items: center;
@@ -143,22 +172,27 @@ input {
   #fonc .fonc__box .carte-fonc {
     grid-area: fonc;
     z-index: 1;
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: #f6f6f6;
     box-shadow: 0 1px 15px rgba(96, 96, 96, 0.3);
-    margin: 0 0 0 20px;
-    padding: 0 0 0 0;
+    margin: 0 0 0 15px;
     align-items: center;
     display: flex;
     flex-direction: row;
   }
-  #fonc .fonc__box .carte-fonc__logo {
-    height: 50px;
-    width: 50px;
+  #fonc .fonc__box .carte-fonc__txt {
+    height: 75px;
     display: grid;
     align-items: center;
     justify-items: center;
     text-align: center;
+  }
+  #fonc .fonc__box .carte-fonc__logo {
+    width: 38px;
+    padding: 0 0 0 30px;
+  }
+  #fonc .fonc__box .carte-fonc__background--clair {
+    background-color: #f4ebff;
   }
 
   #nav {
@@ -192,9 +226,11 @@ input {
   #nav__liste .carte-resto__flag {
     grid-area: img;
     background-color: #99E2D0;
+    color: #008564;
     width: 80px;
     height: 30px;
     margin: 13px 11px 0 0;
+    border-radius: 2px;
     justify-self: flex-end;
     display: grid;
     align-items: center;
