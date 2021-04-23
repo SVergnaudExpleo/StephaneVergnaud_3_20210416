@@ -102,48 +102,50 @@
             grid-template-rows: repeat (4, 1fr);
             grid-gap: 20px;
             .carte-resto{
-                display: grid;
-                grid-template-columns: auto auto;
-                grid-template-rows: auto ;
-                grid-template-areas: 
-                "img img "
-                "txt logo";
+                position: relative;
                 border-radius: 20px;
                 @include ombre-carte;
-                &__img{
-                grid-area: img;
-                height: 174px;
-                width: 100%;
-                border-radius: 20px 20px 0 0;
-                object-fit: cover;
-                z-index: 1;
-                }
-                &__flag{
-                    grid-area: img;
-                    background-color: $color-tri;
-                    @include color-tri__font--dark;
-                    width: 80px;
-                    height: 30px;
-                    margin: 13px 11px 0 0;
-                    border-radius: 2px;
-                    justify-self: flex-end;
-                    @include centrage-txt;
-                    z-index: 2;
-                }
-                &__txt{
-                    grid-area: txt;
-                    padding: 20px 0 20px 15px;
-                    z-index: 1;
+                &__lien{
+                    .lien-contenu{
+                        display: grid;
+                        grid-template-columns: auto;
+                        grid-template-rows: auto;
+                        grid-template-areas: 
+                        "img"
+                        "txt";
+                        &__img{
+                            grid-area: img;
+                            height: 174px;
+                            width: 100%;
+                            border-radius: 20px 20px 0 0;
+                            object-fit: cover;
+                        }
+                        &__flag{
+                            grid-area: img;
+                            background-color: $color-tri;
+                            @include color-tri__font--dark;
+                            width: 80px;
+                            height: 30px;
+                            margin: 13px 11px 0 0;
+                            border-radius: 2px;
+                            justify-self: flex-end;
+                            @include centrage-txt;
+                        }
+                        &__txt{
+                            grid-area: txt;
+                            padding: 20px 0 20px 15px;
+                        }
+                    }
                 }
                 &__btn{
-                    grid-area: logo;
-                    padding: 20px 25px 20px 0;
-                    justify-self: flex-end;
-                    z-index: 2;
+                    position: absolute;
+                    bottom: 33px;
+                    right: 24px;
                 }
             }
         }
     }
+
     footer {
         background-color: $background-footer;
         color: $color-footer;

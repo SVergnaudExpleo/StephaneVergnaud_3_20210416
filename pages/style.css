@@ -62,33 +62,69 @@ input {
 }
 
 .btn-coeur {
-  position: relative;
-  z-index: 10;
+  position: sticky;
   padding: 0;
   height: 20px;
   background: unset;
   border: unset;
 }
 .btn-coeur .far.fa-heart {
+  position: absolute;
+  z-index: 1;
   font-size: 20px;
 }
 .btn-coeur .fas.fa-heart {
-  display: none;
+  position: relative;
+  z-index: 2;
+  font-size: 20px;
+  visibility: hidden;
+  color: transparent;
+  background: linear-gradient(white, white);
+  background-clip: text;
+  opacity: 0%;
+  transition: all 0.3s;
 }
 .btn-coeur:hover {
   cursor: pointer;
 }
-.btn-coeur:active .far.fa-heart {
-  display: none;
-}
-.btn-coeur:active .fas.fa-heart {
-  display: unset;
-  font-size: 20px;
-  color: transparent;
+.btn-coeur:focus .fas.fa-heart {
+  visibility: visible;
   background: linear-gradient(#9356DC, #FF79DA);
   background-clip: text;
+  opacity: 100%;
 }
 
+/*
+.btn-coeur{
+    @include padding_null;
+    height: 20px;
+    background: unset;
+    border: unset;
+    .far.fa-heart{
+        font-size: 20px;
+    }
+    .fas.fa-heart{
+        display: none;
+        visibility: hidden;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+    &:active{
+        .far.fa-heart{
+            display: none;
+        }
+        .fas.fa-heart{
+            display: unset;
+            visibility: visible;
+            font-size: 20px;
+            color: transparent;
+            background: linear-gradient($color-pri, $color-duo);
+            background-clip: text;
+        }
+    }
+}
+*/
 .fa-mobile-alt {
   color: #7e7e7e;
   font-size: 20px;
@@ -233,22 +269,24 @@ input {
     grid-gap: 20px;
   }
   #nav__liste .carte-resto {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto;
-    grid-template-areas: "img img " "txt logo";
+    position: relative;
     border-radius: 20px;
     box-shadow: 0 1px 15px rgba(96, 96, 96, 0.3);
   }
-  #nav__liste .carte-resto__img {
+  #nav__liste .carte-resto__lien .lien-contenu {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: "img" "txt";
+  }
+  #nav__liste .carte-resto__lien .lien-contenu__img {
     grid-area: img;
     height: 174px;
     width: 100%;
     border-radius: 20px 20px 0 0;
     object-fit: cover;
-    z-index: 1;
   }
-  #nav__liste .carte-resto__flag {
+  #nav__liste .carte-resto__lien .lien-contenu__flag {
     grid-area: img;
     background-color: #99E2D0;
     color: #008564;
@@ -261,18 +299,15 @@ input {
     align-items: center;
     justify-items: center;
     text-align: center;
-    z-index: 2;
   }
-  #nav__liste .carte-resto__txt {
+  #nav__liste .carte-resto__lien .lien-contenu__txt {
     grid-area: txt;
     padding: 20px 0 20px 15px;
-    z-index: 1;
   }
   #nav__liste .carte-resto__btn {
-    grid-area: logo;
-    padding: 20px 25px 20px 0;
-    justify-self: flex-end;
-    z-index: 2;
+    position: absolute;
+    bottom: 33px;
+    right: 24px;
   }
 
   footer {
