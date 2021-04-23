@@ -18,8 +18,43 @@
 }
 
 .btn-coeur{
-    position: relative;
-    z-index: 10;
+    position:sticky;
+    @include padding_null;
+    height: 20px;
+    background: unset;
+    border: unset;
+    .far.fa-heart{
+        position: absolute;
+        z-index: 1;
+        font-size: 20px;
+    }
+    .fas.fa-heart{
+        position: relative;
+        z-index: 2;
+        font-size: 20px;
+        visibility: hidden;
+        color: transparent;
+        background: linear-gradient(white, white);
+        background-clip: text;
+        opacity: 0%;
+        transition: all 0.3s;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+    &:focus{
+        .fas.fa-heart{
+            visibility: visible;
+            background: linear-gradient($color-pri, $color-duo);
+            background-clip: text;
+            opacity: 100%;
+        }
+    }
+}
+
+
+/*
+.btn-coeur{
     @include padding_null;
     height: 20px;
     background: unset;
@@ -29,6 +64,7 @@
     }
     .fas.fa-heart{
         display: none;
+        visibility: hidden;
     }
     &:hover{
         cursor: pointer;
@@ -39,6 +75,7 @@
         }
         .fas.fa-heart{
             display: unset;
+            visibility: visible;
             font-size: 20px;
             color: transparent;
             background: linear-gradient($color-pri, $color-duo);
@@ -46,3 +83,4 @@
         }
     }
 }
+*/
