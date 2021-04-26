@@ -10,6 +10,7 @@
     justify-items: center;
     text-align: center;
 }
+
 @mixin ombre-carte {
     box-shadow: 0 1px 15px $color-ombre__carte;
 }

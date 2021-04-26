@@ -5,11 +5,11 @@
     background-image: linear-gradient(to bottom right, $color-duo, $color-pri);
     border: unset;
     @include ombre-btn;
+    transition: all 0.3s;
     &:hover {
             @include gradient__btn--light;
             @include ombre-btn-dark;
             text-shadow: 0 1px 1px black;
-            transition: 0.2s;
             cursor: pointer;
         }
     &__index--rech {
@@ -37,7 +37,6 @@
         background: linear-gradient(white, white);
         background-clip: text;
         opacity: 0%;
-        transition: all 0.3s;
     }
     &:hover{
         cursor: pointer;
@@ -48,6 +47,7 @@
             background: linear-gradient($color-pri, $color-duo);
             background-clip: text;
             opacity: 100%;
+            transition: all 0.5s;
         }
     }
 }

@@ -1,189 +1,216 @@
-@media only screen 
-  and (max-width: 720px) {
-  
-    header{
-        margin: 20px 0 12px 0;
+header{
+    margin: 20px 0 12px 0;
+    @include centrage-txt;
+}
+
+#rech{
+    margin: 0 0 50px 0;
+    padding: 0 0 55px 0;
+    background-color: $background-clair;
+    border-top: groove 2px $border-rech;
+    .rech__bar{
+        margin: 0 0 45px 0;
+        width: 100%;
+        height: 50px;
+        background-color: $background-fonce;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .fas__mapmarker{
+            font-size: 16px;
+            height: 100%;
+            @include centrage-txt;
+        }
+        .form-rech{
+            margin: 0 0 0 18px;
+            width: 100px;
+            @include centrage-txt;
+        }
+    }
+    .rech__titre{
+        margin: 0 80px 20px 60px;
         @include centrage-txt;
     }
+    .rech__txt{
+        margin: 0 30px 35px 40px;
+        @include centrage-txt;
+    }
+    .rech__btn{
+        @include centrage-txt;
+    }
+}
 
-    #rech{
-        margin: 0 0 50px 0;
-        background-color: $background-clair;
-        padding: 0 0 55px 0;
-        .rech__bar{
-            width: 100%;
-            height: 50px;
-            margin: 0 0 45px 0;
-            background-color: $background-fonce;
+#titre-fonc{
+    margin: 0 20px 35px 20px;
+}
+#fonc{
+    margin: 0 20px 50px 20px;
+    display: grid;
+    grid-gap: 20px;
+    .fonc__box{
+        display: grid;
+        align-items: center;
+        grid-template-columns: 50px auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "fonc fonc";
+        grid-gap: 25px;
+        .num{
+            grid-area: fonc;
+            z-index: 2;
+            background-color: $color-pri;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            @include centrage-txt;
+        } 
+        .carte-fonc{
+            grid-area: fonc;
+            z-index: 1;
+            border-radius: 20px;
+            background-color: $background-clair;
+            @include ombre-carte;
+            margin: 0 0 0 15px;
+            align-items: center;
             display: flex;
             flex-direction: row;
-            justify-content: center;
-            .fas__mapmarker{
-                font-size: 16px;
-                height: 100%;
+            &__txt{
+                height: 75px;
                 @include centrage-txt;
             }
-            .form-rech{
-                margin: 0 0 0 18px;
-                width: 100px;
-                @include centrage-txt;
+            &__logo{
+                width: 38px;
+                padding: 0 0 0 30px;
+            }
+            &__background--clair {
+            @include color-pri__background--light;
             }
         }
-        .rech__titre{
-            margin: 0 80px 20px 60px;
-            @include centrage-txt;
-        }
-        .rech__txt{
-            margin: 0 30px 35px 40px;
-            @include centrage-txt;
-        }
-        .rech__btn{
-            @include centrage-txt;
-        }
     }
-
-    #titre-fonc{
-        margin: 0 20px 35px 20px;
-    }
-    #fonc{
-        margin: 0 20px 50px 20px;
+    @media only screen 
+    and (min-width: 901px) {
         display: grid;
-        grid-gap: 20px;
-        .fonc__box{
-            display: grid;
-            align-items: center;
-            grid-template-columns: 50px auto;
-            grid-template-rows: auto;
-            grid-template-areas:
-            "fonc fonc";
-            grid-gap: 25px;
-            .num{
-                grid-area: fonc;
-                z-index: 2;
-                background-color: $color-pri;
-                width: 25px;
-                height: 25px;
-                border-radius: 50%;
-                @include centrage-txt;
-            } 
-            .carte-fonc{
-                grid-area: fonc;
-                z-index: 1;
-                border-radius: 20px;
-                background-color: $background-clair;
-                @include ombre-carte;
-                margin: 0 0 0 15px;
-                align-items: center;
-                display: flex;
-                flex-direction: row;
-                &__txt{
-                    height: 75px;
-                    @include centrage-txt;
-                }
-                &__logo{
-                    width: 38px;
-                    padding: 0 0 0 30px;
-                }
-                &__background--clair {
-                @include color-pri__background--light;
-                }
-            }
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media only screen 
+    and (min-width: 721px)
+    and (max-width: 900px){
+        display: grid;
+        grid-template-areas: 
+        "rest rest . ." 
+        ". men men ."
+        ". . deg deg"
+        ;
+        .fonc__box:nth-child(1){
+            grid-area: rest;
+        }
+        .fonc__box:nth-child(2){
+            grid-area: men;
+        }
+        .fonc__box:nth-child(3){
+            grid-area: deg;
         }
     }
+}
 
-    #nav{
-        margin: 0 20px 65px 20px;
-        &__titre{
-            margin: 0 0 30px 0;
-        }
-        &__liste{
-            width: 100%;
+#nav{
+    padding: 60px 20px 65px 20px;
+    background-color: $background-clair ;
+    &__titre{
+        margin: 0 0 30px 0;
+    }
+    &__liste{
+        width: 100%;
+        display: grid;
+        grid-template-rows: repeat (4, 1fr);
+        grid-gap: 20px;
+        @media only screen 
+        and (min-width: 721px) {
             display: grid;
-            grid-template-rows: repeat (4, 1fr);
-            grid-gap: 20px;
-            .carte-resto{
-                position: relative;
-                border-radius: 20px;
-                @include ombre-carte;
-                &__lien{
-                    .lien-contenu{
-                        display: grid;
-                        grid-template-columns: auto;
-                        grid-template-rows: auto;
-                        grid-template-areas: 
-                        "img"
-                        "txt";
-                        &__img{
-                            grid-area: img;
-                            height: 174px;
-                            width: 100%;
-                            border-radius: 20px 20px 0 0;
-                            object-fit: cover;
-                        }
-                        &__flag{
-                            grid-area: img;
-                            background-color: $color-tri;
-                            @include color-tri__font--dark;
-                            width: 80px;
-                            height: 30px;
-                            margin: 13px 11px 0 0;
-                            border-radius: 2px;
-                            justify-self: flex-end;
-                            @include centrage-txt;
-                        }
-                        &__txt{
-                            grid-area: txt;
-                            padding: 20px 0 20px 15px;
-                        }
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat (2, 1fr);
+        }
+        .carte-resto{
+            position: relative;
+            border-radius: 20px;
+            @include ombre-carte;
+            &__lien{
+                .lien-contenu{
+                    display: grid;
+                    grid-template-columns: auto;
+                    grid-template-rows: auto;
+                    grid-template-areas: 
+                    "img"
+                    "txt";
+                    &__img{
+                        grid-area: img;
+                        height: 174px;
+                        width: 100%;
+                        border-radius: 20px 20px 0 0;
+                        object-fit: cover;
+                    }
+                    &__flag{
+                        grid-area: img;
+                        background-color: $color-tri;
+                        @include color-tri__font--dark;
+                        width: 80px;
+                        height: 30px;
+                        margin: 13px 11px 0 0;
+                        border-radius: 2px;
+                        justify-self: flex-end;
+                        @include centrage-txt;
+                    }
+                    &__txt{
+                        grid-area: txt;
+                        padding: 20px 0 20px 15px;
                     }
                 }
-                &__btn{
-                    position: absolute;
-                    bottom: 33px;
-                    right: 24px;
-                }
+            }
+            &__btn{
+                position: absolute;
+                bottom: 33px;
+                right: 24px;
             }
         }
     }
+}
 
-    footer {
-        background-color: $background-footer;
-        color: $color-footer;
-        padding: 25px 0 38px 25px;
-        .titre-footer{
-            margin: 0 0 25px 0;
-            font-family: "shrikhand", cursive;
+footer {
+    background: $background-footer;
+    color: $color-footer;
+    padding: 25px 0 38px 25px;
+    .titre-footer{
+        margin: 0 0 25px 0;
+        font-family: "shrikhand", cursive;
+    }
+    .txt-footer{
+        display: grid;
+        grid-template-columns: 30px auto;
+        grid-template-rows: repeat(4,1fr);
+        grid-template-areas:
+        "logo1 txt1"
+        "logo2 txt2"
+        "txt3 txt3"
+        "txt4 txt4";
+        grid-row-gap: 15px;
+        &__couvert{
+            grid-area: logo1;
         }
-        .txt-footer{
-            display: grid;
-            grid-template-columns: 30px auto;
-            grid-template-rows: repeat(4,1fr);
-            grid-template-areas:
-            "logo1 txt1"
-            "logo2 txt2"
-            "txt3 txt3"
-            "txt4 txt4";
-            grid-row-gap: 15px;
-            &__couvert{
-                grid-area: logo1;
-            }
-            &__resto{
-                grid-area: txt1;
-            }
-            &__help{
-                grid-area: logo2;
-            }
-            &__part{
-                grid-area: txt2;
-            }
-            &__leg{
-                grid-area: txt3;
-            }
-            &__cont{
-                grid-area: txt4;
-                width: 80px;;
-            }
+        &__resto{
+            grid-area: txt1;
+        }
+        &__help{
+            grid-area: logo2;
+        }
+        &__part{
+            grid-area: txt2;
+        }
+        &__leg{
+            grid-area: txt3;
+        }
+        &__cont{
+            grid-area: txt4;
+            width: 80px;;
         }
     }
-  }
-
+}
