@@ -11,6 +11,18 @@
     text-align: center;
 }
 
+@mixin background-clip {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+}
+
+@mixin btn-style-null {
+    background: unset;
+    outline-style: none;
+    border: none;
+}
+
 @mixin ombre-carte {
     box-shadow: 0 1px 15px $color-ombre__carte;
 }
@@ -19,15 +31,15 @@
     box-shadow: 0px 2px 5px $color-ombre__btn;
 }
 @function ombre-btn--darken($couleur) {
-    $couleur-modif: darken($couleur, 5%);
+    $couleur-modif: darken($couleur, 20%);
     @return $couleur-modif;
 }
 @mixin ombre-btn-dark($couleur: ombre-btn--darken($color-ombre__btn)) {
-    box-shadow: 0px 0px 0px 2px $couleur;
+    box-shadow: 0px 2px 5px $couleur;
 }
 
 @function color-gradient--light($couleur) {
-    $couleur-modif: lighten($couleur, 5%);
+    $couleur-modif: lighten($couleur, 20%);
     @return $couleur-modif;
 }
 @mixin gradient__btn--light($couleur1: color-gradient--light($color-pri), $couleur2: color-gradient--light($color-duo)) {

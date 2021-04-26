@@ -1,15 +1,15 @@
 .btn-action{
+    @include ombre-btn;
+    @include btn-style-null;
     color: white;
     font-weight: bold;
     border-radius: 25px;
     background-image: linear-gradient(to bottom right, $color-duo, $color-pri);
-    border: unset;
-    @include ombre-btn;
-    transition: all 0.3s;
+    transition: all 0.5s;
     &:hover {
             @include gradient__btn--light;
             @include ombre-btn-dark;
-            text-shadow: 0 1px 1px black;
+            color: black;
             cursor: pointer;
         }
     &__index--rech {
@@ -20,9 +20,8 @@
 .btn-coeur{
     position:sticky;
     @include padding_null;
+    @include btn-style-null;
     height: 20px;
-    background: unset;
-    border: unset;
     .far.fa-heart{
         position: absolute;
         z-index: 1;
@@ -35,7 +34,7 @@
         visibility: hidden;
         color: transparent;
         background: linear-gradient(white, white);
-        background-clip: text;
+        @include background-clip;
         opacity: 0%;
     }
     &:hover{
@@ -45,42 +44,10 @@
         .fas.fa-heart{
             visibility: visible;
             background: linear-gradient($color-pri, $color-duo);
-            background-clip: text;
+            @include background-clip;
             opacity: 100%;
             transition: all 0.5s;
         }
     }
 }
 
-
-/*
-.btn-coeur{
-    @include padding_null;
-    height: 20px;
-    background: unset;
-    border: unset;
-    .far.fa-heart{
-        font-size: 20px;
-    }
-    .fas.fa-heart{
-        display: none;
-        visibility: hidden;
-    }
-    &:hover{
-        cursor: pointer;
-    }
-    &:active{
-        .far.fa-heart{
-            display: none;
-        }
-        .fas.fa-heart{
-            display: unset;
-            visibility: visible;
-            font-size: 20px;
-            color: transparent;
-            background: linear-gradient($color-pri, $color-duo);
-            background-clip: text;
-        }
-    }
-}
-*/
