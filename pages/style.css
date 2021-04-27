@@ -228,7 +228,7 @@ footer .txt-footer__cont {
   text-align: center;
 }
 #rech .rech__titre {
-  margin: 0 80px 20px 60px;
+  margin: 0 50px 20px 50px;
   display: grid;
   align-items: center;
   justify-items: center;
@@ -428,6 +428,12 @@ footer .txt-footer__cont {
   border-radius: 20px;
   display: grid;
   grid-template-columns: repeat(3, auto);
+}
+.entrees .liste-entrees .carte-entrees__prix {
+  align-self: flex-end;
+}
+.entrees .liste-entrees .carte-entrees__logo {
+  display: unset;
 }
 
 /*# sourceMappingURL=style.css.map */

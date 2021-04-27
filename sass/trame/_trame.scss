@@ -95,7 +95,7 @@ footer {
         }
     }
     .rech__titre{
-        margin: 0 80px 20px 60px;
+        margin: 0 50px 20px 50px;
         @include centrage-txt;
     }
     .rech__txt{
@@ -283,6 +283,12 @@ footer {
             border-radius: 20px;
             display: grid;
             grid-template-columns: repeat(3,auto);
+            &__prix{
+                align-self: flex-end;
+            }
+            &__logo{
+                display: unset;
+            }
         }
     }
 }
