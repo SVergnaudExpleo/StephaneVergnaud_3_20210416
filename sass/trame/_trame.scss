@@ -11,7 +11,6 @@
     }
 }
 
-
 header{
     padding: 20px 0 12px 0;
     margin-bottom: 3px; 
@@ -268,6 +267,22 @@ footer {
         align-items: center;
         .mini-btn{
             justify-self: flex-end;
+        }
+    }
+}
+
+.entrees{
+    padding: 35px 10px 40px 10px;
+    background: $background-clair;
+    .liste-entrees{
+        display: grid;
+        grid-template-rows: repeat(auto, 1fr);
+        grid-gap: 14px;
+        .carte-entrees{
+            background: white;
+            border-radius: 20px;
+            display: grid;
+            grid-template-columns: repeat(3,auto);
         }
     }
 }

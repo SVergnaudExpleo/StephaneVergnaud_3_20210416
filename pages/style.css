@@ -117,6 +117,12 @@ input {
   transform: scale(0.833, 1);
 }
 
+.fa-check {
+  color: #99E2D0;
+  padding: 10px;
+  border-radius: 50%;
+}
+
 /*general*/
 .dispo {
   font-family: "shrikhand", cursive;
@@ -406,6 +412,22 @@ footer .txt-footer__cont {
 }
 .miniature__txt .mini-btn {
   justify-self: flex-end;
+}
+
+.entrees {
+  padding: 35px 10px 40px 10px;
+  background: #f6f6f6;
+}
+.entrees .liste-entrees {
+  display: grid;
+  grid-template-rows: repeat(auto, 1fr);
+  grid-gap: 14px;
+}
+.entrees .liste-entrees .carte-entrees {
+  background: white;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
 }
 
 /*# sourceMappingURL=style.css.map */
