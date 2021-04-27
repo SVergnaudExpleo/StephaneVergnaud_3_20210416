@@ -1,18 +1,86 @@
-header{
-    margin: 20px 0 12px 0;
+/*general*/
+.dispo{
+    font-family: "shrikhand", cursive;
+    font-size: 20px;
+    color: $color-pri;
+    @include margin_null;
     @include centrage-txt;
+    padding: 100px 0 100px 0;
+    p{
+        margin: 20px 0 20px 0;
+    }
 }
 
+
+header{
+    padding: 20px 0 12px 0;
+    margin-bottom: 3px; 
+    @include centrage-txt;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    "head1 head2 .";
+    .lien-header{
+        grid-area: head1;
+    }
+    .titre-header{
+        grid-area: head2;
+    }
+    &#header-shadow--active{
+        @include ombre-header;
+    }
+}
+
+footer {
+    background: $background-footer;
+    color: $color-footer;
+    padding: 25px 0 38px 25px;
+    .titre-footer{
+        margin: 0 0 25px 0;
+        font-family: "shrikhand", cursive;
+    }
+    .txt-footer{
+        display: grid;
+        grid-template-columns: 30px auto;
+        grid-template-rows: repeat(4,1fr);
+        grid-template-areas:
+        "logo1 txt1"
+        "logo2 txt2"
+        "txt3 txt3"
+        "txt4 txt4";
+        grid-row-gap: 15px;
+        &__couvert{
+            grid-area: logo1;
+        }
+        &__resto{
+            grid-area: txt1;
+        }
+        &__help{
+            grid-area: logo2;
+        }
+        &__part{
+            grid-area: txt2;
+        }
+        &__leg{
+            grid-area: txt3;
+        }
+        &__cont{
+            grid-area: txt4;
+            width: 80px;;
+        }
+    }
+}
+
+/*index*/
 #rech{
     margin: 0 0 50px 0;
     padding: 0 0 55px 0;
     background-color: $background-clair;
-    border-top: groove 2px $border-rech;
     .rech__bar{
         margin: 0 0 45px 0;
         width: 100%;
         height: 50px;
         background-color: $background-fonce;
+        /*border-top: groove 2px $border-rech;*/
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -175,42 +243,31 @@ header{
     }
 }
 
-footer {
-    background: $background-footer;
-    color: $color-footer;
-    padding: 25px 0 38px 25px;
-    .titre-footer{
-        margin: 0 0 25px 0;
-        font-family: "shrikhand", cursive;
+/*pages*/
+
+.miniature{
+    position: sticky;
+    z-index: 1;
+    height: 300px;
+    &__img{
+        position: relative;
+        z-index: 2;
+        object-fit: cover;
+        height: 300px;
+        width: 100%;
     }
-    .txt-footer{
+    &__txt{
+        position: relative;
+        z-index: 3;
+        bottom: 64px;
+        background: $background-clair;
+        border-radius: 30px 30px 0 0;
+        padding: 25px 35px 0 20px;
         display: grid;
-        grid-template-columns: 30px auto;
-        grid-template-rows: repeat(4,1fr);
-        grid-template-areas:
-        "logo1 txt1"
-        "logo2 txt2"
-        "txt3 txt3"
-        "txt4 txt4";
-        grid-row-gap: 15px;
-        &__couvert{
-            grid-area: logo1;
-        }
-        &__resto{
-            grid-area: txt1;
-        }
-        &__help{
-            grid-area: logo2;
-        }
-        &__part{
-            grid-area: txt2;
-        }
-        &__leg{
-            grid-area: txt3;
-        }
-        &__cont{
-            grid-area: txt4;
-            width: 80px;;
+        grid-template-columns: repeat(2, auto);
+        align-items: center;
+        .mini-btn{
+            justify-self: flex-end;
         }
     }
 }

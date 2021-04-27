@@ -117,25 +117,90 @@ input {
   transform: scale(0.833, 1);
 }
 
-header {
-  margin: 20px 0 12px 0;
+/*general*/
+.dispo {
+  font-family: "shrikhand", cursive;
+  font-size: 20px;
+  color: #9356DC;
+  margin: 0;
   display: grid;
   align-items: center;
   justify-items: center;
   text-align: center;
+  padding: 100px 0 100px 0;
+}
+.dispo p {
+  margin: 20px 0 20px 0;
 }
 
+header {
+  padding: 20px 0 12px 0;
+  margin-bottom: 3px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "head1 head2 .";
+}
+header .lien-header {
+  grid-area: head1;
+}
+header .titre-header {
+  grid-area: head2;
+}
+header#header-shadow--active {
+  box-shadow: 0 0 6px rgba(81, 81, 81, 0.83);
+}
+
+footer {
+  background: #353535;
+  color: white;
+  padding: 25px 0 38px 25px;
+}
+footer .titre-footer {
+  margin: 0 0 25px 0;
+  font-family: "shrikhand", cursive;
+}
+footer .txt-footer {
+  display: grid;
+  grid-template-columns: 30px auto;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: "logo1 txt1" "logo2 txt2" "txt3 txt3" "txt4 txt4";
+  grid-row-gap: 15px;
+}
+footer .txt-footer__couvert {
+  grid-area: logo1;
+}
+footer .txt-footer__resto {
+  grid-area: txt1;
+}
+footer .txt-footer__help {
+  grid-area: logo2;
+}
+footer .txt-footer__part {
+  grid-area: txt2;
+}
+footer .txt-footer__leg {
+  grid-area: txt3;
+}
+footer .txt-footer__cont {
+  grid-area: txt4;
+  width: 80px;
+}
+
+/*index*/
 #rech {
   margin: 0 0 50px 0;
   padding: 0 0 55px 0;
   background-color: #f6f6f6;
-  border-top: groove 2px #d5d5d5;
 }
 #rech .rech__bar {
   margin: 0 0 45px 0;
   width: 100%;
   height: 50px;
   background-color: #eaeaea;
+  /*border-top: groove 2px $border-rech;*/
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -211,7 +276,7 @@ header {
   z-index: 1;
   border-radius: 20px;
   background-color: #f6f6f6;
-  box-shadow: 0 1px 15px rgba(96, 96, 96, 0.3);
+  box-shadow: 0 1px 10px rgba(96, 96, 96, 0.3);
   margin: 0 0 0 15px;
   align-items: center;
   display: flex;
@@ -276,7 +341,7 @@ header {
 #nav__liste .carte-resto {
   position: relative;
   border-radius: 20px;
-  box-shadow: 0 1px 15px rgba(96, 96, 96, 0.3);
+  box-shadow: 0 1px 10px rgba(96, 96, 96, 0.3);
 }
 #nav__liste .carte-resto__lien .lien-contenu {
   display: grid;
@@ -315,40 +380,32 @@ header {
   right: 24px;
 }
 
-footer {
-  background: #353535;
-  color: white;
-  padding: 25px 0 38px 25px;
+/*pages*/
+.miniature {
+  position: sticky;
+  z-index: 1;
+  height: 300px;
 }
-footer .titre-footer {
-  margin: 0 0 25px 0;
-  font-family: "shrikhand", cursive;
+.miniature__img {
+  position: relative;
+  z-index: 2;
+  object-fit: cover;
+  height: 300px;
+  width: 100%;
 }
-footer .txt-footer {
+.miniature__txt {
+  position: relative;
+  z-index: 3;
+  bottom: 64px;
+  background: #f6f6f6;
+  border-radius: 30px 30px 0 0;
+  padding: 25px 35px 0 20px;
   display: grid;
-  grid-template-columns: 30px auto;
-  grid-template-rows: repeat(4, 1fr);
-  grid-template-areas: "logo1 txt1" "logo2 txt2" "txt3 txt3" "txt4 txt4";
-  grid-row-gap: 15px;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
 }
-footer .txt-footer__couvert {
-  grid-area: logo1;
-}
-footer .txt-footer__resto {
-  grid-area: txt1;
-}
-footer .txt-footer__help {
-  grid-area: logo2;
-}
-footer .txt-footer__part {
-  grid-area: txt2;
-}
-footer .txt-footer__leg {
-  grid-area: txt3;
-}
-footer .txt-footer__cont {
-  grid-area: txt4;
-  width: 80px;
+.miniature__txt .mini-btn {
+  justify-self: flex-end;
 }
 
 /*# sourceMappingURL=style.css.map */

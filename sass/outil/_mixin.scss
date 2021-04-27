@@ -23,8 +23,12 @@
     border: none;
 }
 
+@mixin ombre-header {
+    box-shadow: 0 0 6px $colors-ombre__header;
+    
+}
 @mixin ombre-carte {
-    box-shadow: 0 1px 15px $color-ombre__carte;
+    box-shadow: 0 1px 10px $color-ombre__carte;
 }
 
 @mixin ombre-btn {
