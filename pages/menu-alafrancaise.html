@@ -24,10 +24,13 @@
             <div class="miniature__txt">
                 <h1 class="mini-titre">À la française</h1>
                 <div class="mini-btn" title="J'aime">
-                    <button class="btn-coeur" type="button">
-                        <i class="far fa-heart"></i>
-                        <i class="fas fa-heart"></i>
-                    </button>
+                    <div class="btn-coeur">
+                        <input type="checkbox" id="coeur-1">
+                        <label for="coeur-1">
+                            <i class="far fa-heart"></i>
+                            <i class="fas fa-heart"></i>
+                        </label>
+                    </div>
                 </div>
             </div>
         </section>
@@ -41,38 +44,65 @@
         <section class="entrees">
             <h4>ENTRÉES</h4>
             <div class="liste-entrees">
-                <div class="carte-entrees">
-                    <div class="carte-entrees__txt">
-                        <p><strong>Tartare de poulpe acidulé</strong></p>
-                        <p>Aux zests d'orange</p>
-                    </div>
-                    <div class="carte-entrees__prix">
-                        <p>25€</p>
-                    </div>
-                    <div class="carte-entrees__logo">
-                        <i class="fas fa-check"></i>
-                    </div>
+                <div class="btn-carte">
+                    <input type="checkbox" id="entree-1">
+                    <label for="entree-1">
+                        <div class="visible">
+                            <div class="visible__txt">
+                                <p><strong>Tartare de poulpe acidulé</strong></p>
+                                <p>Aux zests d'orange</p>
+                            </div>
+                            <div class="visible__prix">
+                                <p>25€</p>
+                            </div>
+                        </div>
+                        <div class="invisible">
+                            <div class="logo-invisible">
+                                <i class="fas fa-check"></i>
+                            </div>
+                        </div>
+                    </label>
                 </div>
-                <div class="carte-entrees">
-                    <div class="carte-entrees__txt">
-                        <p><strong>Velouté de légumes d'antan</strong></p>
-                        <p>Carotte, panais, topinambour</p>
-                    </div>
-                    <div class="carte-entrees__prix">
-                        <p>35€</p>
-                    </div>
-                    <div class="carte-entrees__logo">
-                        <i class="fas fa-check"></i>
-                    </div>
+                <div class="btn-carte">
+                    <input type="checkbox" id="entree-2">
+                    <label for="entree-2">
+                        <div class="visible">
+                            <div class="visible__txt">
+                                <p><strong>Velouté de légumes d'antan</strong></p>
+                                <p>Carotte, panais, topinambour</p>
+                            </div>
+                            <div class="visible__prix">
+                                <p>35€</p>
+                            </div>
+                        </div>
+                        <div class="invisible">
+                            <div class="logo-invisible">
+                                <i class="fas fa-check"></i>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                <div class="btn-carte">
+                    <input type="checkbox" id="entree-3">
+                    <label for="entree-3">
+                        <div class="visible">
+                            <div class="visible__txt">
+                                <p><strong>Soupe à l'oignon</strong></p>
+                                <p>Revisitée</p>
+                            </div>
+                            <div class="visible__prix">
+                                <p>20€</p>
+                            </div>
+                        </div>
+                        <div class="invisible">
+                            <div class="logo-invisible">
+                                <i class="fas fa-check"></i>
+                            </div>
+                        </div>
+                    </label>
                 </div>
             </div>
-            
-
-
         </section>
-
-
-
 
         <footer>
             <h3 class="titre-footer">ohmyfood</h3>

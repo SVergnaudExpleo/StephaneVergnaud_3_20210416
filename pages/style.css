@@ -42,6 +42,10 @@ input {
   height: 100%;
 }
 
+input[type=checkbox] {
+  display: none;
+}
+
 .btn-action {
   box-shadow: 0px 2px 5px rgba(77, 77, 77, 0.79);
   background: unset;
@@ -71,12 +75,12 @@ input {
   border: none;
   height: 20px;
 }
-.btn-coeur .far.fa-heart {
+.btn-coeur label .far.fa-heart {
   position: absolute;
   z-index: 1;
   font-size: 20px;
 }
-.btn-coeur .fas.fa-heart {
+.btn-coeur label .fas.fa-heart {
   position: relative;
   z-index: 2;
   font-size: 20px;
@@ -88,10 +92,10 @@ input {
   -moz-background-clip: text;
   opacity: 0%;
 }
-.btn-coeur:hover {
+.btn-coeur label:hover {
   cursor: pointer;
 }
-.btn-coeur:focus .fas.fa-heart {
+.btn-coeur input[type=checkbox]:checked + label .fas.fa-heart {
   visibility: visible;
   background: linear-gradient(#9356DC, #FF79DA);
   background-clip: text;
@@ -99,6 +103,85 @@ input {
   -moz-background-clip: text;
   opacity: 100%;
   transition: all 0.5s;
+}
+
+/* ce code fonctionne
+.btn-coeur{
+    position:sticky;
+    @include padding_null;
+    @include btn-style-null;
+    height: 20px;
+    .far.fa-heart{
+        position: absolute;
+        z-index: 1;
+        font-size: 20px;
+    }
+    .fas.fa-heart{
+        position: relative;
+        z-index: 2;
+        font-size: 20px;
+        visibility: hidden;
+        color: transparent;
+        background: linear-gradient(white, white);
+        @include background-clip;
+        opacity: 0%;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+    &:focus{
+        .fas.fa-heart{
+            visibility: visible;
+            background: linear-gradient($color-pri, $color-duo);
+            @include background-clip;
+            opacity: 100%;
+            transition: all 0.5s;
+        }
+    }
+}
+*/
+.btn-carte label {
+  cursor: pointer;
+  margin: 20px;
+  padding: 0;
+  background-color: white;
+  border-radius: 20px;
+  text-align: start;
+  display: grid;
+  grid-template-areas: "visible invisible";
+  grid-template-columns: 100% 0%;
+  transition: all 0.5s;
+}
+.btn-carte label .visible {
+  grid-area: visible;
+  height: 50px;
+  padding: 5px 5px 5px 5px;
+  display: grid;
+  grid-template-columns: auto 30px;
+  grid-template-areas: "txt prix";
+}
+.btn-carte label .visible__txt {
+  grid-area: txt;
+  align-self: center;
+  justify-self: flex-start;
+}
+.btn-carte label .visible__prix {
+  grid-area: prix;
+  align-self: flex-end;
+}
+.btn-carte label .invisible {
+  grid-area: invisible;
+  display: grid;
+  align-content: center;
+  background-color: mediumturquoise;
+  border-radius: 0 20px 20px 0;
+  overflow: hidden;
+}
+.btn-carte label .invisible .logo-invisible {
+  height: 100%;
+}
+.btn-carte input[type=checkbox]:checked + label {
+  grid-template-columns: 75% 25%;
 }
 
 .fa-mobile-alt {
@@ -119,7 +202,9 @@ input {
 
 .fa-check {
   color: #99E2D0;
+  background: white;
   padding: 10px;
+  margin: 0 0 0 10px;
   border-radius: 50%;
 }
 
@@ -422,18 +507,6 @@ footer .txt-footer__cont {
   display: grid;
   grid-template-rows: repeat(auto, 1fr);
   grid-gap: 14px;
-}
-.entrees .liste-entrees .carte-entrees {
-  background: white;
-  border-radius: 20px;
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-}
-.entrees .liste-entrees .carte-entrees__prix {
-  align-self: flex-end;
-}
-.entrees .liste-entrees .carte-entrees__logo {
-  display: unset;
 }
 
 /*# sourceMappingURL=style.css.map */
