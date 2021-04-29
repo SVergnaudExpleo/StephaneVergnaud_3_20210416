@@ -22,6 +22,44 @@
     @include padding_null;
     @include btn-style-null;
     height: 20px;
+    label{
+        .far.fa-heart{
+            position: absolute;
+            z-index: 1;
+            font-size: 20px;
+        }
+        .fas.fa-heart{
+            position: relative;
+            z-index: 2;
+            font-size: 20px;
+            visibility: hidden;
+            color: transparent;
+            background: linear-gradient(white, white);
+            @include background-clip;
+            opacity: 0%;
+        }
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    & input[type=checkbox]:checked + label{
+        .fas.fa-heart{
+        visibility: visible;
+        background: linear-gradient($color-pri, $color-duo);
+        @include background-clip;
+        opacity: 100%;
+        transition: all 0.5s;
+        }
+    }
+}
+
+
+/* ce code fonctionne
+.btn-coeur{
+    position:sticky;
+    @include padding_null;
+    @include btn-style-null;
+    height: 20px;
     .far.fa-heart{
         position: absolute;
         z-index: 1;
@@ -50,4 +88,55 @@
         }
     }
 }
+*/
+
+.btn-carte{
+    label{
+        cursor: pointer;
+        margin: 20px;
+        padding: 0;
+        background-color: white;
+        border-radius: 20px;
+        text-align: start;
+        display: grid;
+        grid-template-areas: 
+        "visible invisible";
+        grid-template-columns: 100% 0%;
+        transition: all 0.5s;
+        .visible{
+            grid-area: visible;
+            height: 50px;
+            padding: 5px 5px 5px 5px; 
+            display: grid;
+            grid-template-columns: auto 30px;
+            grid-template-areas:
+            "txt prix";
+            &__txt{
+                grid-area: txt;
+                align-self: center;
+                justify-self: flex-start;
+            }
+            &__prix{
+                grid-area: prix;
+                align-self: flex-end;
+            }
+        }
+        .invisible{
+            grid-area: invisible;
+            display: grid;
+            align-content: center;
+            background-color: mediumturquoise;
+            border-radius: 0 20px 20px 0;
+            overflow: hidden;
+            .logo-invisible{
+                height: 100%;
+            }
+        }
+    }
+
+    & input[type=checkbox]:checked + label{
+        grid-template-columns: 75% 25%;
+    }
+}
+
 
