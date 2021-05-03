@@ -1,3 +1,6 @@
+/*base*/
+/*couleur*/
+/*transition*/
 html {
   font-family: "roboto", sans-serif;
 }
@@ -106,57 +109,60 @@ input[type=checkbox] {
 }
 
 .btn-carte {
-  width: 300px;
+  box-shadow: 0 1px 10px rgba(96, 96, 96, 0.3);
+  border-radius: 20px;
 }
 .btn-carte label {
   cursor: pointer;
-  margin: 20px;
-  padding: 0;
-  background-color: white;
-  border-radius: 20px;
-  text-align: start;
-  display: grid;
-  grid-template-areas: "visible invisible";
-  grid-template-columns: 100% 0%;
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s;
 }
-.btn-carte label .visible {
+.btn-carte label .label-carte {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 100% 0%;
+  grid-template-areas: "visible invisible";
+  border-radius: 20px;
+  -webkit-transition: all 400ms;
+  -moz-transition: all 400ms;
+  transition: all 400ms;
+}
+.btn-carte label .label-carte .visible {
   grid-area: visible;
-  height: 50px;
-  padding: 5px 10px 5px 5px;
+  height: 40px;
+  padding: 15px 20px 15px 10px;
   display: flex;
   flex-flow: row;
+  -webkit-transition: all 400ms;
+  -moz-transition: all 400ms;
+  transition: all 400ms;
 }
-.btn-carte label .visible__txt {
+.btn-carte label .label-carte .visible__txt {
   width: 100%;
   align-self: center;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.btn-carte label .visible__prix {
+.btn-carte label .label-carte .visible__prix {
   align-self: flex-end;
 }
-.btn-carte label .invisible {
-  grid-area: invisible;
+.btn-carte label .label-carte .invisible {
   display: grid;
   align-content: center;
-  background-color: mediumturquoise;
-  border-radius: 0 20px 20px 0;
+  justify-content: center;
+  background: #99E2D0;
   overflow: hidden;
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s;
+  -webkit-transition: all 400ms;
+  -moz-transition: all 400ms;
+  transition: all 400ms;
 }
-.btn-carte label .invisible .logo-invisible {
+.btn-carte label .label-carte .invisible .logo-invisible {
   height: 100%;
 }
-.btn-carte input[type=checkbox]:checked + label {
-  grid-template-columns: 75% 25%;
+.btn-carte input[type=checkbox]:checked + label .label-carte {
+  grid-template-columns: 82% 18%;
 }
 .btn-carte input[type=checkbox]:checked + label .fa-check {
-  transform: rotate(2turn);
-  -webkit-transform: rotate(2turn);
+  transform: rotate(1turn);
 }
 
 .fa-mobile-alt {
@@ -178,11 +184,12 @@ input[type=checkbox] {
 .fa-check {
   color: #99E2D0;
   background: white;
-  padding: 10px;
-  margin: 0 0 0 10px;
+  font-size: 14px;
+  padding: 3px;
   border-radius: 50%;
-  transition: all 0.7s;
-  -webkit-transition: all 0.7s;
+  -webkit-transition: all 600ms;
+  -moz-transition: all 600ms;
+  transition: all 600ms;
 }
 
 /*general*/
@@ -482,7 +489,6 @@ footer .txt-footer__cont {
 }
 .entrees .liste-entrees {
   display: grid;
-  grid-template-rows: repeat(auto, 1fr);
   grid-gap: 14px;
 }
 

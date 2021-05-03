@@ -16,9 +16,8 @@
 .fa-check{
     color: $color-tri;
     background: white;
-    padding: 10px;
-    margin: 0 0 0 10px;
+    font-size: 14px;
+    padding: 3px;
     border-radius: 50%;
-    transition: all 0.7s;
-    -webkit-transition: all 0.7s;
+    @include transi-600ms;
 }

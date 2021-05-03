@@ -1,3 +1,4 @@
+/*base*/
 @mixin margin-null {
     margin: 0;
 }
@@ -23,11 +24,15 @@
     border: none;
 }
 
+/*couleur*/
 @mixin ombre-header {
     box-shadow: 0 0 6px $colors-ombre__header;
     
 }
 @mixin ombre-carte {
+    box-shadow: 0 1px 10px $color-ombre__carte;
+}
+@mixin ombre-btn-carte {
     box-shadow: 0 1px 10px $color-ombre__carte;
 }
 
@@ -70,4 +75,23 @@
 }
 @mixin color-tri__font--dark ($colour: color-tri__font--darken($color-tri)){
     color: $colour;
+}
+
+/*transition*/
+@mixin transi-400ms {
+    -webkit-transition: all 400ms;
+    -moz-transition: all 400ms;
+    transition: all 400ms;
+}
+
+@mixin transi-600ms {
+    -webkit-transition: all 600ms;
+    -moz-transition: all 600ms;
+    transition: all 600ms;
+}
+
+@mixin transi-3000ms {
+    -webkit-transition: all 3000ms;
+    -moz-transition: all 3000ms;
+    transition: all 3000ms;
 }
