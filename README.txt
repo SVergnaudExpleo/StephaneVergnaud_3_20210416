@@ -5,59 +5,38 @@
 
 Réserve de code
 
-/* 
+/* ce code fonctionne
 .btn-coeur{
+    position:sticky;
     @include padding_null;
+    @include btn-style-null;
     height: 20px;
-    background: unset;
-    border: unset;
     .far.fa-heart{
+        position: absolute;
+        z-index: 1;
         font-size: 20px;
     }
     .fas.fa-heart{
-        display: none;
+        position: relative;
+        z-index: 2;
+        font-size: 20px;
         visibility: hidden;
+        color: transparent;
+        background: linear-gradient(white, white);
+        @include background-clip;
+        opacity: 0%;
     }
     &:hover{
         cursor: pointer;
     }
-    &:active{
-        .far.fa-heart{
-            display: none;
-        }
+    &:focus{
         .fas.fa-heart{
-            display: unset;
             visibility: visible;
-            font-size: 20px;
-            color: transparent;
             background: linear-gradient($color-pri, $color-duo);
-            background-clip: text;
+            @include background-clip;
+            opacity: 100%;
+            transition: all 0.5s;
         }
     }
 }
 */
-
-@media only screen 
-  and (max-width: 3000px) {
-
-
-
-/*test multi condition*/
-
-$max-ecran: screen  ;
-
-@function media-query($ecran){
-    @if ($ecran ">=" 720px) {
-        @return rgb(90, 84, 84);
-    }
-    @if ($ecran "<=" 1200px) {
-        @return red;
-    }
-    @else{
-        @return magenta;
-    }
-}
-
-@mixin media-color ($color-query: media-query($max-ecran)){
-    background: $color-query;
-}
