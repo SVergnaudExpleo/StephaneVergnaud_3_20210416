@@ -12,7 +12,6 @@
     font-size: 18px;
     transform: scale(0.833, 1);
 }
-
 .fa-check{
     color: $color-tri;
     background: white;
@@ -20,4 +19,8 @@
     padding: 3px;
     border-radius: 50%;
     @include transi-600ms;
+}
+.fa-sync{
+    font-size:100px;
+    color: $color-duo;
 }
