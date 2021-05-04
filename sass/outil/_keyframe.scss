@@ -1,0 +1,25 @@
+@keyframes anim-charg-rota {
+    0% {
+        transform: rotate(0turn);
+    }
+    100% {
+        transform: rotate(2turn);
+    }
+}
+@keyframes anim-charg-visib {
+    0%, 100% {
+        visibility: visible;
+    } 
+}
+
+@keyframes anim-body {
+    0% {
+        opacity: 0%;
+    }
+    63% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
