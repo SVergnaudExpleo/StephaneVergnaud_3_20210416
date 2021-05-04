@@ -15,6 +15,10 @@ h2{
 h3{
     @include margin_null;
 }
+h4{
+    @include margin_null;
+    font-weight: normal;
+}
 p{
     @include margin_null;
 }
@@ -35,4 +39,10 @@ input{
 }
 input[type=checkbox] {
 	display: none;
+}
+.border-40px{
+    @include margin_null;
+    margin: 8px 0 15px 0;
+    width: 40px;
+    border-top: 3px solid $color-tri;
 }
