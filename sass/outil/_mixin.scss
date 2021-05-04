@@ -79,19 +79,13 @@
 
 /*transition*/
 @mixin transi-400ms {
-    -webkit-transition: all 400ms;
-    -moz-transition: all 400ms;
     transition: all 400ms;
 }
 
 @mixin transi-600ms {
-    -webkit-transition: all 600ms;
-    -moz-transition: all 600ms;
     transition: all 600ms;
 }
 
 @mixin transi-3000ms {
-    -webkit-transition: all 3000ms;
-    -moz-transition: all 3000ms;
     transition: all 3000ms;
 }

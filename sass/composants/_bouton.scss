@@ -63,7 +63,7 @@
             display: grid;
             grid-template-columns: 100% 0%;
             grid-template-areas: 
-            "visible invisible";
+            "visible cache";
             border-radius: 20px;
             @include transi-400ms;
             .visible{
@@ -85,6 +85,7 @@
                 }
             }
             .invisible{
+                grid-area: cache;
                 display: grid;
                 align-content: center;
                 justify-content: center;
@@ -98,10 +99,10 @@
         }
     }
     & input[type=checkbox]:checked + label{
-        & .label-carte{
+        .label-carte{
             grid-template-columns: 82% 18%;
         }
-        & .fa-check{
+        .fa-check{
             transform: rotate(1turn);
         }
     }

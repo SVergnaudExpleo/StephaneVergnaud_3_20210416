@@ -298,12 +298,33 @@ footer {
     }
 }
 
-.entrees{
-    padding: 35px 10px 40px 10px;
+
+.box-plat{
     background: $background-clair;
-    .liste-entrees{
+    padding: 35px 10px 40px 10px;
+}
+
+
+.plat{
+    padding: 0 0 40px 0;
+    background: $background-clair;
+    .liste-plat{
         display: grid;
         grid-gap: 14px;
-        
+        .btn-carte:nth-child(1){
+            animation: anim-carte-plat 500ms linear;
+        }
+        .btn-carte:nth-child(2){
+            animation: anim-carte-plat 500ms linear 100ms;
+        }
+        .btn-carte:nth-child(3){
+            animation: anim-carte-plat 500ms linear 200ms;
+        }
+        .btn-carte:nth-child(4){
+            animation: anim-carte-plat 500ms linear 300ms;
+        }
+        .btn-carte:nth-child(5){
+            animation: anim-carte-plat 500ms linear 400ms;
+        }
     }
 }
