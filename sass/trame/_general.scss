@@ -1,0 +1,70 @@
+.dispo{
+    font-family: "shrikhand", cursive;
+    font-size: 20px;
+    color: $color-pri;
+    @include margin_null;
+    @include centrage-txt;
+    padding: 100px 0 100px 0;
+    p{
+        margin: 20px 0 20px 0;
+    }
+}
+
+header{
+    padding: 20px 0 12px 0;
+    margin-bottom: 3px; 
+    @include centrage-txt;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    "head1 head2 .";
+    .lien-header{
+        grid-area: head1;
+        width: 50px;
+    }
+    .titre-header{
+        grid-area: head2;
+    }
+    &#header-shadow--active{
+        @include ombre-header;
+    }
+}
+
+footer {
+    background: $background-footer;
+    color: $color-footer;
+    padding: 25px 0 38px 25px;
+    .titre-footer{
+        margin: 0 0 25px 0;
+        font-family: "shrikhand", cursive;
+    }
+    .txt-footer{
+        display: grid;
+        grid-template-columns: 30px auto;
+        grid-template-rows: repeat(4,1fr);
+        grid-template-areas:
+        "logo1 txt1"
+        "logo2 txt2"
+        "txt3 txt3"
+        "txt4 txt4";
+        grid-row-gap: 15px;
+        &__couvert{
+            grid-area: logo1;
+        }
+        &__resto{
+            grid-area: txt1;
+        }
+        &__help{
+            grid-area: logo2;
+        }
+        &__part{
+            grid-area: txt2;
+        }
+        &__leg{
+            grid-area: txt3;
+        }
+        &__cont{
+            grid-area: txt4;
+            width: 80px;;
+        }
+    }
+}
