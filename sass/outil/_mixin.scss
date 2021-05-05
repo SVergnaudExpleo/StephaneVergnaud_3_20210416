@@ -52,7 +52,7 @@
     @return $couleur-modif;
 }
 @mixin gradient__btn--light($couleur1: color-gradient--light($color-pri), $couleur2: color-gradient--light($color-duo)) {
-    background-image: linear-gradient(to bottom right, $couleur2, $couleur1);    
+    background-image: linear-gradient(to bottom right, $couleur2 10%, $couleur1);    
 }
 
 @function color-pri__background--lighten($color-pri) {
