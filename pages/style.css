@@ -28,7 +28,7 @@
 @keyframes anim-carte-plat {
   0% {
     opacity: 0%;
-    transform: translateY(50px);
+    transform: translateY(30px);
   }
   100% {
     opacity: 100%;
@@ -100,6 +100,8 @@ input[type=checkbox] {
   background: unset;
   outline-style: none;
   border: none;
+  position: relative;
+  z-index: 1;
   color: white;
   font-weight: bold;
   border-radius: 25px;
@@ -107,13 +109,30 @@ input[type=checkbox] {
   transition: all 0.5s;
 }
 .btn-action:hover {
-  background-image: linear-gradient(to bottom right, #ffdff6, #c9abee);
-  box-shadow: 0px 2px 5px rgba(26, 26, 26, 0.79);
-  color: black;
   cursor: pointer;
+}
+.btn-action:hover::after {
+  opacity: 1;
+}
+.btn-action::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 25px;
+  background-image: linear-gradient(to bottom right, #ff93e1, #a16be0);
+  box-shadow: 0px 2px 5px rgba(52, 52, 52, 0.79);
+  opacity: 0;
+  z-index: -1;
+  transition: all 500ms;
 }
 .btn-action__index--rech {
   padding: 18px 20px 18px 20px;
+}
+.btn-action__page--cmd {
+  padding: 18px 50px 18px 50px;
 }
 
 .btn-coeur {
@@ -157,25 +176,28 @@ input[type=checkbox] {
 .btn-carte {
   box-shadow: 0 1px 10px rgba(96, 96, 96, 0.3);
   border-radius: 20px;
+  background-color: white;
+  overflow: hidden;
 }
 .btn-carte label {
   cursor: pointer;
 }
 .btn-carte label .label-carte {
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 100% 0%;
-  grid-template-areas: "visible cache";
-  border-radius: 20px;
-  transition: all 400ms;
+  display: flex;
+  flex-direction: row;
 }
 .btn-carte label .label-carte .visible {
-  grid-area: visible;
+  width: 100%;
   height: 40px;
   padding: 15px 20px 15px 10px;
   display: flex;
   flex-flow: row;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   transition: all 400ms;
+  -webkit-transition: all 400ms;
+  -moz-transition: all 400ms;
 }
 .btn-carte label .label-carte .visible__txt {
   width: 100%;
@@ -188,24 +210,86 @@ input[type=checkbox] {
   align-self: flex-end;
 }
 .btn-carte label .label-carte .invisible {
-  grid-area: cache;
+  width: 0%;
   display: grid;
   align-content: center;
   justify-content: center;
   background: #99E2D0;
   overflow: hidden;
   transition: all 400ms;
+  -webkit-transition: all 400ms;
+  -moz-transition: all 400ms;
 }
 .btn-carte label .label-carte .invisible .logo-invisible {
   height: 100%;
 }
-.btn-carte input[type=checkbox]:checked + label .label-carte {
-  grid-template-columns: 82% 18%;
+.btn-carte input[type=checkbox]:checked + label .label-carte .visible {
+  width: 82%;
+}
+.btn-carte input[type=checkbox]:checked + label .label-carte .invisible {
+  width: 18%;
 }
 .btn-carte input[type=checkbox]:checked + label .fa-check {
   transform: rotate(1turn);
 }
 
+/*
+.btn-carte{
+    @include ombre-btn-carte;
+    border-radius: 20px;
+    background-color: white;
+    label{
+        cursor: pointer;
+        .label-carte{
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 100% 0%;
+            grid-template-areas: 
+            "visible cache";
+            border-radius: 20px;
+            @include transi-400ms;
+            .visible{
+                grid-area: visible;
+                height: 40px;
+                padding: 15px 20px 15px 10px;
+                display: flex;
+                flex-flow: row;
+                overflow: hidden;
+                white-space:nowrap;
+                text-overflow: ellipsis;
+                &__txt{
+                    width: 100%;
+                    align-self: center;
+                    overflow: hidden;
+                    white-space:nowrap;
+                    text-overflow: ellipsis;
+                }
+                &__prix{
+                    align-self: flex-end;
+                }
+            }
+            .invisible{
+                grid-area: cache;
+                display: grid;
+                align-content: center;
+                justify-content: center;
+                background: $color-tri;
+                overflow: hidden;
+                .logo-invisible{
+                    height: 100%;
+                }
+            }
+        }
+    }
+    & input[type=checkbox]:checked + label{
+        .label-carte{
+            grid-template-columns: 82% 18%;
+        }
+        .fa-check{
+            transform: rotate(1turn);
+        }
+    }
+}*/
 .fa-mobile-alt {
   color: #7e7e7e;
   font-size: 20px;
@@ -222,6 +306,10 @@ input[type=checkbox] {
   transform: scale(0.833, 1);
 }
 
+.fa-arrow-left {
+  font-size: 20px;
+}
+
 .fa-check {
   color: #99E2D0;
   background: white;
@@ -236,7 +324,6 @@ input[type=checkbox] {
   color: #FF79DA;
 }
 
-/*general*/
 .dispo {
   font-family: "shrikhand", cursive;
   font-size: 20px;
@@ -264,6 +351,7 @@ header {
 }
 header .lien-header {
   grid-area: head1;
+  width: 50px;
 }
 header .titre-header {
   grid-area: head2;
@@ -308,7 +396,6 @@ footer .txt-footer__cont {
   width: 80px;
 }
 
-/*index*/
 #chargement {
   visibility: hidden;
   position: fixed;
@@ -395,11 +482,11 @@ footer .txt-footer__cont {
 }
 
 #titre-fonc {
-  margin: 0 20px 35px 20px;
+  padding: 0 20px 35px 20px;
 }
 
 #fonc {
-  margin: 0 20px 50px 20px;
+  padding: 0 20px 50px 20px;
   display: grid;
   grid-gap: 20px;
 }
@@ -491,6 +578,7 @@ footer .txt-footer__cont {
   }
 }
 #nav__liste .carte-resto {
+  background-color: white;
   position: relative;
   border-radius: 20px;
   box-shadow: 0 1px 10px rgba(96, 96, 96, 0.3);
@@ -532,7 +620,6 @@ footer .txt-footer__cont {
   right: 24px;
 }
 
-/*pages*/
 .miniature {
   position: sticky;
   z-index: 1;
@@ -562,31 +649,63 @@ footer .txt-footer__cont {
 
 .box-plat {
   background: #f6f6f6;
-  padding: 35px 10px 40px 10px;
+  padding: 35px 0 30px 0;
+  display: grid;
+  row-gap: 30px;
 }
-
-.plat {
-  padding: 0 0 40px 0;
+@media only screen and (min-width: 720px) and (max-width: 1200px) {
+  .box-plat {
+    justify-content: center;
+  }
+}
+@media only screen and (min-width: 1200.1px) {
+  .box-plat {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 15px;
+  }
+}
+.box-plat .plat {
+  padding: 0 10px 0 10px;
   background: #f6f6f6;
 }
-.plat .liste-plat {
+.box-plat .plat .liste-plat {
   display: grid;
   grid-gap: 14px;
 }
-.plat .liste-plat .btn-carte:nth-child(1) {
+.box-plat .plat .liste-plat .btn-carte:nth-child(1) {
   animation: anim-carte-plat 500ms linear;
 }
-.plat .liste-plat .btn-carte:nth-child(2) {
+.box-plat .plat .liste-plat .btn-carte:nth-child(2) {
   animation: anim-carte-plat 500ms linear 100ms;
 }
-.plat .liste-plat .btn-carte:nth-child(3) {
+.box-plat .plat .liste-plat .btn-carte:nth-child(3) {
   animation: anim-carte-plat 500ms linear 200ms;
 }
-.plat .liste-plat .btn-carte:nth-child(4) {
+.box-plat .plat .liste-plat .btn-carte:nth-child(4) {
   animation: anim-carte-plat 500ms linear 300ms;
 }
-.plat .liste-plat .btn-carte:nth-child(5) {
+.box-plat .plat .liste-plat .btn-carte:nth-child(5) {
   animation: anim-carte-plat 500ms linear 400ms;
+}
+@media only screen and (min-width: 720px) and (max-width: 1200px) {
+  .box-plat .plat {
+    width: 600px;
+    border-left: solid #FF79DA;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .box-plat .plat {
+    margin: 0 10px 0 10px;
+    border-left: solid #FF79DA;
+  }
+}
+
+.box-btn {
+  padding: 20px 0 80px 0;
+  display: flex;
+  justify-content: center;
+  background-color: #f6f6f6;
 }
 
 /*# sourceMappingURL=style.css.map */
