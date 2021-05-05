@@ -6,7 +6,7 @@
     color: white;
     font-weight: bold;
     border-radius: 25px;
-    background-image: linear-gradient(to bottom right, $color-duo, $color-pri);
+    background-image: linear-gradient(to bottom right, $color-duo 10%, $color-pri);
     transition: all 0.5s;
     &:hover{
         cursor: pointer;

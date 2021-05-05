@@ -105,7 +105,7 @@ input[type=checkbox] {
   color: white;
   font-weight: bold;
   border-radius: 25px;
-  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  background-image: linear-gradient(to bottom right, #FF79DA 10%, #9356DC);
   transition: all 0.5s;
 }
 .btn-action:hover {
@@ -122,7 +122,7 @@ input[type=checkbox] {
   bottom: 0;
   left: 0;
   border-radius: 25px;
-  background-image: linear-gradient(to bottom right, #ff93e1, #a16be0);
+  background-image: linear-gradient(to bottom right, #ff93e1 10%, #a16be0);
   box-shadow: 0px 2px 5px rgba(52, 52, 52, 0.79);
   opacity: 0;
   z-index: -1;
