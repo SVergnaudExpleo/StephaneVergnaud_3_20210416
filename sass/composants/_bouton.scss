@@ -100,9 +100,15 @@
                     overflow: hidden;
                     white-space:nowrap;
                     text-overflow: ellipsis;
+                    font-size: 0.9em;
+                    line-height: 1.4;
+                    strong{
+                        font-size: initial;
+                    }
                 }
                 &__prix{
                     align-self: flex-end;
+                    font-weight: bold;
                 }
             }
             .invisible{
@@ -133,66 +139,3 @@
         }
     }
 }
-
-
-
-
-
-
-/*
-.btn-carte{
-    @include ombre-btn-carte;
-    border-radius: 20px;
-    background-color: white;
-    label{
-        cursor: pointer;
-        .label-carte{
-            overflow: hidden;
-            display: grid;
-            grid-template-columns: 100% 0%;
-            grid-template-areas: 
-            "visible cache";
-            border-radius: 20px;
-            @include transi-400ms;
-            .visible{
-                grid-area: visible;
-                height: 40px;
-                padding: 15px 20px 15px 10px;
-                display: flex;
-                flex-flow: row;
-                overflow: hidden;
-                white-space:nowrap;
-                text-overflow: ellipsis;
-                &__txt{
-                    width: 100%;
-                    align-self: center;
-                    overflow: hidden;
-                    white-space:nowrap;
-                    text-overflow: ellipsis;
-                }
-                &__prix{
-                    align-self: flex-end;
-                }
-            }
-            .invisible{
-                grid-area: cache;
-                display: grid;
-                align-content: center;
-                justify-content: center;
-                background: $color-tri;
-                overflow: hidden;
-                .logo-invisible{
-                    height: 100%;
-                }
-            }
-        }
-    }
-    & input[type=checkbox]:checked + label{
-        .label-carte{
-            grid-template-columns: 82% 18%;
-        }
-        .fa-check{
-            transform: rotate(1turn);
-        }
-    }
-}*/
