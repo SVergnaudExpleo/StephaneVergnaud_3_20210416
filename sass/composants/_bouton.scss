@@ -42,7 +42,11 @@
     position:sticky;
     @include padding_null;
     @include btn-style-null;
-    height: 20px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     label{
         .far.fa-heart{
             position: absolute;
