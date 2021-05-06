@@ -136,6 +136,7 @@
         }
         .fa-check{
             transform: rotate(1turn);
+            @include transi-600ms;
         }
     }
 }

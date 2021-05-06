@@ -10,6 +10,7 @@ h1 {
     @include margin_null;
 }
 h2{
+    font-family: "shrikhand", cursive;
     @include margin_null;
 }
 h3{
@@ -17,6 +18,10 @@ h3{
 }
 h4{
     @include margin_null;
+}
+h5{
+    @include margin_null;
+    font-size: 1em;
     font-weight: normal;
 }
 p{

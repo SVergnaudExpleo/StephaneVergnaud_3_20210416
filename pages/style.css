@@ -50,6 +50,7 @@ h1 {
 }
 
 h2 {
+  font-family: "shrikhand", cursive;
   margin: 0;
 }
 
@@ -59,6 +60,11 @@ h3 {
 
 h4 {
   margin: 0;
+}
+
+h5 {
+  margin: 0;
+  font-size: 1em;
   font-weight: normal;
 }
 
@@ -237,6 +243,7 @@ input[type=checkbox] {
 }
 .btn-carte input[type=checkbox]:checked + label .fa-check {
   transform: rotate(1turn);
+  transition: all 600ms;
 }
 
 .fa-mobile-alt {
@@ -265,7 +272,6 @@ input[type=checkbox] {
   font-size: 14px;
   padding: 3px;
   border-radius: 50%;
-  transition: all 600ms;
 }
 
 .fa-sync {
