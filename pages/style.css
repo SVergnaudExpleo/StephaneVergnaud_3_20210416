@@ -147,7 +147,11 @@ input[type=checkbox] {
   background: unset;
   outline-style: none;
   border: none;
-  height: 20px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .btn-coeur label .far.fa-heart {
   position: absolute;
@@ -571,7 +575,7 @@ footer .txt-footer__cont {
 }
 #nav__liste .carte-resto__btn {
   position: absolute;
-  bottom: 33px;
+  bottom: 25px;
   right: 24px;
 }
 
