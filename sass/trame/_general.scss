@@ -1,15 +1,3 @@
-.dispo{
-    font-family: "shrikhand", cursive;
-    font-size: 20px;
-    color: $color-pri;
-    @include margin_null;
-    @include centrage-txt;
-    padding: 100px 0 100px 0;
-    p{
-        margin: 20px 0 20px 0;
-    }
-}
-
 header{
     padding: 20px 0 12px 0;
     margin-bottom: 3px; 
