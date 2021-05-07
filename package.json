@@ -4,7 +4,7 @@
   "description": "site ohmyfood",
   "main": "index.js",
   "scripts": {
-    "sass":"sass --watch ./sass/main.scss:pages/style.css --style compressed"
+    "sass":"sass --watch ./sass/main.scss:style.css --style compressed"
   },
   "repository": {
     "type": "git",
