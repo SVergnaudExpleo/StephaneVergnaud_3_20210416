@@ -7,7 +7,7 @@
     font-weight: bold;
     border-radius: 25px;
     background-image: linear-gradient(to bottom right, $color-duo 10%, $color-pri);
-    transition: all 0.5s;
+    @include transi-500ms;
     &:hover{
         cursor: pointer;
         &::after{
@@ -26,15 +26,13 @@
         @include ombre-btn-dark;
         opacity: 0;
         z-index: -1;
-        transition: all 500ms;
-
+        @include transi-500ms;
     }
     &__index--rech {
         padding: 18px 20px 18px 20px;
     }
     &__page--cmd {
         padding: 18px 50px 18px 50px;
-        
     }
 }
 
@@ -73,7 +71,7 @@
         background: linear-gradient($color-pri, $color-duo);
         @include background-clip;
         opacity: 100%;
-        transition: all 0.5s;
+        @include transi-500ms;
         }
     }
 }
