@@ -22,7 +22,8 @@
     }
 }
 #body-index{
-    animation: anim-body 2000ms;
+    opacity: 0%;
+    animation: anim-body 1000ms ease 800ms forwards;
 }
 
 #rech{
