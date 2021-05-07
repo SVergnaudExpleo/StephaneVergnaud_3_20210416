@@ -11,19 +11,17 @@
         visibility: visible;
     } 
 }
-
 @keyframes anim-body {
     0% {
         opacity: 0%;
     }
-    63% {
+    40% {
         opacity: 0%;
     }
     100% {
         opacity: 100%;
     }
 }
-
 @keyframes anim-carte-plat {
     0% {
         opacity: 0%;
@@ -32,6 +30,5 @@
     100% {
         opacity: 100%;
         transform: translateY(0px);
-
     }
 }

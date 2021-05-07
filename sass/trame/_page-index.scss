@@ -8,11 +8,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: anim-charg-visib 2000ms linear;
+    animation: anim-charg-visib 1000ms linear;
     .icone-charg{
-        
         @include centrage-txt;
-        animation: anim-charg-rota 2000ms linear;
+        animation: anim-charg-rota 1000ms linear;
     }
     p {
         @include centrage-txt;
@@ -23,7 +22,7 @@
     }
 }
 #body-index{
-    animation: anim-body 3000ms linear;
+    animation: anim-body 2000ms;
 }
 
 #rech{
@@ -105,7 +104,7 @@
                 padding: 0 0 0 30px;
             }
             &__background--clair {
-            @include color-pri__background--light;
+                @include color-pri__background--light;
             }
         }
     }
@@ -121,8 +120,7 @@
         grid-template-areas: 
         "rest rest . ." 
         ". men men ."
-        ". . deg deg"
-        ;
+        ". . deg deg";
         .fonc__box:nth-child(1){
             grid-area: rest;
         }
